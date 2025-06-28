@@ -1,0 +1,233 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon"/>
+ 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+  <title> PP - Pantanal Porrada
+  </title>
+  <style>
+   
+    @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap');
+    a{
+      font-size: 20px;
+      font-family: 'PT Sans Narrow', sans-serif;
+      text-shadow:
+      1px 1px 2px black,
+      0 0 1em red,
+      0 0 0.2em red;
+      color: white;
+      text-decoration: none;
+      
+    }
+    input{
+      
+      border-radius: 29px;
+      padding: 6px;
+      align-items: center;
+      justify-content: center;
+    }
+    .glow-on-hover {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 30px;
+    width: 190px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 5px;
+}
+
+.glow-on-hover:active {
+    color: #DC143C
+}
+
+.glow-on-hover:active:after {
+    background: #5c0b1b;;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #a8102e;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+* {
+      box-sizing: border-box;
+      font-family: 'Press Start 2P', cursive;
+    }
+    body{
+      background-image: url(./img/fundo3.png);
+      background-repeat:no-repeat ;
+      background-size: cover;
+    }
+
+    
+  </style>
+</head>
+<body>
+   <img src="./img/favicon.png" width="150" >   
+  
+  <br>
+  <img src="./img/fundobranco.png" width="200" >
+ 
+
+  
+  <!-- red container div -->
+  <div style="position: relative; display: inline-block">
+    <!-- smaller red container div -->
+    <div
+      style="
+        position: absolute;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+      "
+    >
+      <!-- player health -->
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          border-top: 4px solid white;
+          border-left: 4px solid white;
+          border-bottom: 4px solid white;
+        "
+      >
+        <div style="background-color: red; height: 25px; width: 100%"></div>
+        <div
+          id="playerHealth"
+          style="
+            position: absolute;
+            background: #c6fc04;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+          "
+        ></div>
+      </div>
+
+      <!-- timer -->
+      <div
+        id="timer"
+        style="
+          background-color: black;
+          width: 60px;
+          height: 50px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          border: 4px solid white;
+        "
+      >
+        10
+      </div>
+      <!-- enemy health -->
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          border-top: 4px solid white;
+          border-bottom: 4px solid white;
+          border-right: 4px solid white;
+        "
+      >
+        <div style="background-color: red; height: 25px"></div>
+        <div
+          id="enemyHealth"
+          style="
+            position: absolute;
+            background: #c6fc04;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          "
+        ></div>
+      </div>
+      <div></div>
+    </div>
+    <div
+      id="displayText"
+      style="
+        position: absolute;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+      "
+    >
+      Tie
+    </div>
+    <canvas></canvas>
+  </div>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="js/utils.js"></script>
+  <script src="js/classes.js"></script>
+  <script src="index.js"></script>
+  <br>
+  
+  <a href="index.html"> <img src="img/botao.png" alt="voltar para a Página inicial" title="Voltar para a Página inicial" width="55"> </a><img src="./img/fundobranco.png" height="40" width="550" >
+             
+  
+  <button class="glow-on-hover" onClick="window.location.reload()">   Recomeçar</button>
+
+
+</body>

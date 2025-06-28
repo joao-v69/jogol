@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogar - Pantanal Porrada</title>
+</head>
+<style>
+a{
+  text-decoration:none;
+}
+.jogar{
+  color:#c3e696;
+  font-size: 25px;
+  font-family:'Press Start 2P', cursive;
+  text-shadow: 0 0 23px #000000
+  
+}  
+body{
+  background-image:url(./img/fundo2.png);
+  background-repeat:no-repeat ;
+  background-size: cover;
+  
+  color:#fff;
+  font-weight:300;
+   
+    }
+nav{
+  background:#054b05;
+  position:absolute;
+  top:0;
+  bottom:0;
+  height:100%;
+  left:0;
+  width:100px;
+  overflow:hidden;
+  -webkit-transition:width .2s linear;
+  transition:width .2s linear;
+}
+ .lombra {
+  position:relative;
+  text-decoration:none;
+  color:white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  display:table;
+  width:350px;
+  border-top:1px solid #054b05;  
+}
+.fa {
+  position: relative;
+  width: 100px;
+  height: 46px;
+  text-align: center;
+  top:12px; 
+  font-size:20px;
+}
+nav .nav-text  {
+  position:relative;
+  top:12px;
+}
+
+
+.lombra:hover{
+color:#fff;
+background-color:#8b112c; 
+}
+nav:hover{
+  width:250px;
+}
+.logo{
+  width:1px;
+  font-family: 'Tangerine', serif;
+  text-align:center;
+  transition:all 0.5s ease;
+}
+.label{
+  height:10px; 
+  float:left;
+  width:100px;
+  transition:all 0.5s ease;
+  font-family: 'Tangerine', serif;
+  opacity:0;
+}
+nav:hover> .logo{
+  width:250px;
+}
+nav:hover> .logo > h2{
+  text-indent: -999px
+}
+nav:hover> .logo > h2:before{
+  text-indent: 0px;
+  content:'OnAirCode';
+  float:left;
+  position:relative;
+  left:60px;
+}
+nav:hover> .label{
+  height:100px;
+  width:250px;
+  opacity:1;
+  color:black;
+  text-align:center;
+}
+
+.scrollbar
+{
+height: 90%;
+width: 100%;
+overflow-y: hidden;
+overflow-x: hidden;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+border-radius: 5px;
+}
+
+#style-1::-webkit-scrollbar
+{
+width: 5px;
+background-color: #F7F7F7;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+background-color: #BFBFBF;
+}
+.scrollbar:hover{
+  height: 90%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+  .glow-on-hover {
+    font-family: 'Press start 2p';
+    font-size: 20px;
+    width: 190px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    
+}
+
+.glow-on-hover:before {
+  
+  content: '';
+  background: linear-gradient(45deg, #91ff00, #ff7300, #fffb00, #9dff00, #fbff00, #c8ff00, #e5ff00, #bbff00, #bbff00);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 5px;
+}
+
+.glow-on-hover:active {
+  
+  color: #0b6128
+}
+
+.glow-on-hover:active:after {
+  background: #0b5c2d;;
+  
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:#054b05;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+.transitionSize{
+    transition: transform 0.5s;
+      }
+        .transitionSize:hover{
+          transform: scale(1.5)
+        };
+
+      
+
+</style>
+</head>
+<body>
+<div class="jogar">
+  <p align="center">
+  <img src="./img/favicon.png" width="350" >
+
+
+<p align="center">
+  <A href="jogo.html" target="_blank"><button class="glow-on-hover transitionSize">  JOGAR! </button> </a>
+<br>
+<br>
+<br>
+
+
+<a class="jogar">
+JOGUE JA O NOVO JOGO DE LUTA<br>
+BRASILEIRO NO SEU BROWSER!<br>
+<BR>
+SE PREPARE PARA UMA LUTA <BR>
+  INSANA NO MEIO DO <BR>
+   <FONT  color="green"> PANTANAL!</FONT>
+<BR>
+<img src="./img/disponivel.png" width="350">
+
+
+
+</p>
+</div>
+<nav>
+    <a class="lombra logo" href="">
+        <img src="./img/logo.png" width="100" >
+    </a> 
+  
+    <div class="scrollbar" id="style-1">
+ 
+    <a class="lombra" href="sobre.html">
+        <i class="fa fa-arrow-circle-right fa-lg"></i>
+        <span class="nav-text">Sobre</span>
+      </a>
+      <a class="lombra" href="jogo.html" target="_blank">
+        <i class="fa fa-gamepad fa-lg"></i>
+        <span class="nav-text">Jogar!</span>
+    </a>
+  
+    <a class="lombra" href="history.html">
+        <i class="fa fa-flag fa-lg"></i>
+        <span class="nav-text">História</span>
+    </a>
+ 
+    <a class="lombra" href="artes.html">
+        <i class="fa fa-picture-o fa-lg"></i>
+        <span class="nav-text">Artes do jogo</span>
+    </a>
+     </a>
+        
+        <a class="lombra" href="https://instagram.com/joaogonsalvess">
+        <i class="fa fa-user fa-lg"></i>
+        <span class="nav-text">Meu insta</span>
+    </a>
+    </a>
+  
+    <a class="lombra" href="direitos.html">
+        <i class="fa fa-book fa-lg"></i>
+        <span class="nav-text">Direitos</span>
+    </a>
+  
+    </div> 
+    
+</nav>
+
+</body>
+<script src="menu.js"></script>
+</html>
